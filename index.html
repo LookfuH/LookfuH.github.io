@@ -6,6 +6,19 @@
     <title> My Website  </title> 
 </head>
 <body>
-    <div>test</div>
+    
+    <button onclick="Random(this, 20)"> clcik for random d20</button>
+   
+    
+
+   
+
 </body>
+
+<script>
+    function Random(element, max){
+    element.text = Math.floor(Math.random() * max);
+}
+
+</script>
 </html>
