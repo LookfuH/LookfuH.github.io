@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <button onclick="Random(this, 20)"> clcik for random d20</button>
+    <button onclick="Random(this)"> clcik for random d20</button>
    
     
 
@@ -16,8 +16,8 @@
 </body>
 
 <script>
-    function Random(element, max){
-    element.innerText = Math.floor(Math.random() * max);
+    function Random(element, max = 20, dice = 1){
+    element.innerText = (Math.floor(Math.random() * max)+ 1);
 }
 
 </script>
