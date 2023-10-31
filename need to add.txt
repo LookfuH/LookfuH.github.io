@@ -1,0 +1,12 @@
+
+checks and saves: 
+
+Strength
+Intellgence
+Dexterity
+Wisdom
+Consistution
+Charisma
+
+
+SQL table? maybe Json Table... xml?
