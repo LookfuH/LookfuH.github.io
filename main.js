@@ -19,7 +19,7 @@ let result = [
     //console.log(solved.flat()) = ['S', 'Q', 'U', 'A', 'D', 'E', ' ', 'P', ' ', 'I', 'N', ' ', 'P', ' ', 'R', 'S', 'W', 'E', 'E', 'T', 'E', ' ', 'R', ' ', 'Y']
     let res = arr.flat();
     var itemlocation = new Array();
-    let scramble = new Array();
+    let scramble = new Array(res);
     //counts the amount of times a letter is swapped and counts if the optimizes (will need work)
     var opt = 0;
     //uses the soultion array and makes a maps of locations that can be swapped around
@@ -38,8 +38,14 @@ let result = [
       itemlocation[b] = temp;
     }
 
+    for(let i = 0; i< res.length; i++){
+      if(itemlocation.contains(i)){
+        scramble.push(itemlocation[i]);
+      }
+      else scramble.push(" ");
+    }
 
-    console.log(itemlocation);
+    console.log(scramble);
   }
   
 
