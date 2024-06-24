@@ -38,8 +38,12 @@ let result = [
       itemlocation[b][b] = temp;
       opt++;
     }
-
-
+    var count = 0;
+    for( let i = 0; i<arr.length; i++){
+      if(itemlocation[i] == i){
+        //scramble.push(itemlocation[][i])
+      }
+    }
     console.log(itemlocation);
   }
   
