@@ -40,7 +40,7 @@ let result = [
     }
 
 
-    console.log(scrambled);
+    console.log(itemlocation);
   }
   
 
