@@ -44,7 +44,7 @@ let result = [
         //scramble.push(itemlocation[][i])
       }
     }
-    console.log(itemlocation);
+    console.log(itemlocation[2]);
   }
   
 
