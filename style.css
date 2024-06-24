@@ -1,0 +1,17 @@
+#gameboard {
+    display: grid;
+    grid-template-columns: 4rem 4rem 4rem 4rem 4rem;
+    grid-template-rows: 4rem 4rem 4rem 4rem 4rem;
+}
+
+.peice {
+    background-color: white;
+    margin: 1px;
+    border: 2px solid black;
+    border-radius: 3px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+}
