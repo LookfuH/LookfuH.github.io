@@ -42,7 +42,7 @@ let result = [
     
      // itemlocation.forEach(())
     
-    console.log(itemlocation[2]);
+    console.log(itemlocation);
   }
   
 
