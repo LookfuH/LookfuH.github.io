@@ -24,7 +24,7 @@ let result = [
     var opt = 0;
     //uses the soultion array and makes a maps of locations that can be swapped around
     for (let i = 0; i < res.length; i++){
-        if(res[i] !== " "){
+        if(res[1] !== " "){
             //should generate an array of that lists where letters are
             itemlocation.push(res[i], i); //makes it dynamic?
         };
