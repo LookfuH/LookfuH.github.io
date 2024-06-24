@@ -39,7 +39,7 @@ let result = [
     }
 
     for(let i = 0; i< res.length; i++){
-      if(itemlocation.contains(i)){
+      if(itemlocation.includes(i)){
         scramble.push(res[itemlocation[i]]);
       }
       else scramble.push(" ");
