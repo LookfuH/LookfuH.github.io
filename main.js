@@ -40,7 +40,7 @@ let result = [
     }
 
 
-    console.log(itemlocation);
+    console.log(opt);
   }
   
 
