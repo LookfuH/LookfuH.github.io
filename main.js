@@ -18,23 +18,24 @@ let result = [
     //what the solved array looks like flat
     //console.log(solved.flat()) = ['S', 'Q', 'U', 'A', 'D', 'E', ' ', 'P', ' ', 'I', 'N', ' ', 'P', ' ', 'R', 'S', 'W', 'E', 'E', 'T', 'E', ' ', 'R', ' ', 'Y']
     let res = arr.flat();
-    var scrambled = new Array();
+    var itemlocation = new Array();
+    let scramble = new Array();
     //counts the amount of times a letter is swapped and counts if the optimizes (will need work)
     var opt = 0;
     //uses the soultion array and makes a maps of locations that can be swapped around
     for (let i = 0; i < res.length; i++){
         if(res[i] !== " "){
             //should generate an array of that lists where letters are
-            scrambled.push(i, res[i]); //makes it dynamic?
+            itemlocation.push(i, res[i]); //makes it dynamic?
         };
     };
 
     //shifts the item key
-    for (let i = 0; i < scrambled.length; i++){
-      let b = Math.floor(Math.random() * scrambled.length);
-      let temp = scrambled[i][i];
-      scrambled[i][i] = scrambled[i][b];
-      scrambled[i][b] = temp;
+    for (let i = 0; i < itemlocation.length; i++){
+      let b = Math.floor(Math.random() * itemlocation.length);
+      let temp = itemlocation[i][i];
+      itemlocation[i][i] = itemlocation[b][b];
+      itemlocation[b][b] = temp;
       opt++;
     }
 
