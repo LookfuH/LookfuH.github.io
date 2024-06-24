@@ -34,8 +34,8 @@ let result = [
     for (let i = 0; i < itemlocation.length; i++){
       let b = Math.floor(Math.random() * itemlocation.length);
       let temp = itemlocation[i][i];
-      itemlocation[i][i] = itemlocation[b][b];
-      itemlocation[b][b] = temp;
+      itemlocation[i][i] = itemlocation[i][b];
+      itemlocation[i][b] = temp;
       opt++;
     }
     var count = 0;
