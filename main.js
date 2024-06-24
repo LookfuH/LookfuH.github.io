@@ -13,7 +13,31 @@ let result = [
     ["S", "W", "E", "E", "T"],
     ["E", " ", "R", " ", "Y"],
   ];
+
   function scramble(arr) {
+    //console.log(solved.flat()) = ['S', 'Q', 'U', 'A', 'D', 'E', ' ', 'P', ' ', 'I', 'N', ' ', 'P', ' ', 'R', 'S', 'W', 'E', 'E', 'T', 'E', ' ', 'R', ' ', 'Y']
+    let res = arr.flat();
+    var itemlocation = new Array();
+    var opt = 0;
+    //uses the soultion array and makes a maps of locations that can be swapped around
+    for (let i = 0; i < res.length; i++){
+        if(res[i] !== " "){
+            //should generate an array of that lists where letters are
+            //itemlocation[i] = i;
+            itemlocation.push(i, res[i]); //make it dynamic?
+        };
+    };
+
+    //shifts the item key
+    for (let i = 0; i < itemlocation.length; i++){
+      let b = Math.floor(Math.random() * itemlocation.length);
+      let temp = itemlocation[i][i];
+      itemlocation[i][i] = itemlocation[b][b];
+      itemlocation[b][b] = temp;
+      opt++;
+    }
+
+    /*
     let res = arr.flat();
     for (let i = 0; i < 5000; i++) {
       let a = Math.floor(Math.random() * res.length);
@@ -25,9 +49,11 @@ let result = [
         res[b] = temp;
       }
     }
-    console.log(res);
+    */
+    console.log(itemlocation);
   }
   
+
   let score = [];
   
   let Running = true;
