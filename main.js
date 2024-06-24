@@ -17,40 +17,27 @@ let result = [
   function scramble(arr) {
     //console.log(solved.flat()) = ['S', 'Q', 'U', 'A', 'D', 'E', ' ', 'P', ' ', 'I', 'N', ' ', 'P', ' ', 'R', 'S', 'W', 'E', 'E', 'T', 'E', ' ', 'R', ' ', 'Y']
     let res = arr.flat();
-    var itemlocation = new Array();
+    var scrambled = new Array();
+    //counts the amount of times a letter is swapped and counts if the optimizes (will need work)
     var opt = 0;
     //uses the soultion array and makes a maps of locations that can be swapped around
     for (let i = 0; i < res.length; i++){
         if(res[i] !== " "){
             //should generate an array of that lists where letters are
-            //itemlocation[i] = i;
-            itemlocation.push(i, res[i]); //make it dynamic?
+            scrambled.push(i, res[i]); //makes it dynamic?
         };
     };
 
     //shifts the item key
-    for (let i = 0; i < itemlocation.length; i++){
-      let b = Math.floor(Math.random() * itemlocation.length);
-      let temp = itemlocation[i][i];
-      itemlocation[i][i] = itemlocation[b][b];
-      itemlocation[b][b] = temp;
+    for (let i = 0; i < scrambled.length; i++){
+      let b = Math.floor(Math.random() * scrambled.length);
+      let temp = scrambled[i][i];
+      scrambled[i][i] = scrambled[i][b];
+      scrambled[i][b] = temp;
       opt++;
     }
 
-    /*
-    let res = arr.flat();
-    for (let i = 0; i < 5000; i++) {
-      let a = Math.floor(Math.random() * res.length);
-      let b = Math.floor(Math.random() * res.length);
-  
-      if (res[a] !== " " && res[b] !== " ") {
-        let temp = res[a];
-        res[a] = res[b];
-        res[b] = temp;
-      }
-    }
-    */
-    console.log(itemlocation);
+    console.log(scrambled);
   }
   
 
