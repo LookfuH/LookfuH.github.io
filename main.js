@@ -26,16 +26,16 @@ let result = [
     for (let i = 0; i < res.length; i++){
         if(res[i] !== " "){
             //should generate an array of that lists where letters are
-            itemlocation.push(i, res[i]); //makes it dynamic?
+            itemlocation.push(res[i], i); //makes it dynamic?
         };
     };
 
     //shifts the item key
     for (let i = 0; i < itemlocation.length; i++){
       let b = Math.floor(Math.random() * itemlocation.length);
-      let temp = itemlocation[i];
-      itemlocation[i] = itemlocation[b];
-      itemlocation[i] = temp;
+      let temp = itemlocation[i][i];
+      itemlocation[i][i] = itemlocation[b][b];
+      itemlocation[i][i] = temp;
       opt++;
     }
     var count = 0;
