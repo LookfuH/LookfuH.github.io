@@ -15,6 +15,7 @@ let result = [
   ];
 
   function scramble(arr) {
+    //what the solved array looks like flat
     //console.log(solved.flat()) = ['S', 'Q', 'U', 'A', 'D', 'E', ' ', 'P', ' ', 'I', 'N', ' ', 'P', ' ', 'R', 'S', 'W', 'E', 'E', 'T', 'E', ' ', 'R', ' ', 'Y']
     let res = arr.flat();
     var scrambled = new Array();
@@ -36,6 +37,7 @@ let result = [
       scrambled[i][b] = temp;
       opt++;
     }
+
 
     console.log(scrambled);
   }
