@@ -1,6 +1,4 @@
 let result = [
-    ["I", "Q", "E", "E", "N"],
-    ["P", " ", "P", " ", "Y"],
     ["P", " ", "S", " ", "T"],
     ["E", "R", "E", "W", "D"],
     ["U", " ", "A", " ", "S"],
@@ -17,6 +15,7 @@ let result = [
   function scramble(arr) {
     //what the solved array looks like flat
     //console.log(solved.flat()) = ['S', 'Q', 'U', 'A', 'D', 'E', ' ', 'P', ' ', 'I', 'N', ' ', 'P', ' ', 'R', 'S', 'W', 'E', 'E', 'T', 'E', ' ', 'R', ' ', 'Y']
+    //                            ['Y', 'E', 'R', 'S', 'P', 'I', ' ', 'E', ' ', 'E', 'S', ' ', 'U', ' ', 'R', 'D', 'W', 'P', 'T', undefined, undefined, ' ', undefined, ' ', undefined]
     let res = arr.flat();
     var itemlocation = new Array();
     let scramble = new Array();
@@ -39,7 +38,8 @@ let result = [
     }
 
     for(let i = 0; i< res.length; i++){
-      if(itemlocation.includes(i)){
+      //
+      if(res[i] !== " "){
         scramble.push(res[itemlocation[i]]);
       }
       else scramble.push(" ");
