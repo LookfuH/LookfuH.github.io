@@ -26,7 +26,7 @@ let result = [
     for (let i = 0; i < res.length; i++){
         if(res[i] !== " "){
             //should generate an array of that lists where letters are
-            itemlocation.push(res[i], i); //makes it dynamic?
+            itemlocation.push(i, res[i]); //makes it dynamic?
         };
     };
 
