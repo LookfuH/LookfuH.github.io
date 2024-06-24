@@ -16,7 +16,7 @@ let result = [
 
   function scramble(arr) {
     //what the solved array looks like flat
-    //console.log(solved.flat()) = ['S', 'Q', 'U', 'A', 'D', 'E', ' ', 'P', ' ', 'I', 'N', ' ', 'P', ' ', 'R', 'S', 'W', 'E', 'E', 'T', 'E', ' ', 'R', ' ', 'Y']
+    //console.log(solved.flat()) = ['S', 'Q', 'U', 'A', 'D', 'E', ' ', 'P', ' ', 'I', 'N', ' ', 'P', ' ', 'R', 'S', 'W', 'E', 'E', 'T', 'E', ' ', 'R', ' ', 'Y']
     let res = arr.flat();
     var itemlocation = new Array();
     let scramble = new Array();
@@ -24,9 +24,9 @@ let result = [
     var opt = 0;
     //uses the soultion array and makes a maps of locations that can be swapped around
     for (let i = 0; i < res.length; i++){
-        if(res[1] !== " "){
+        if(res[i] !== " "){
             //should generate an array of that lists where letters are
-            itemlocation.push(res[i], i); //makes it dynamic?
+            itemlocation.push(i, res[i]); //makes it dynamic?
         };
     };
 
@@ -35,13 +35,11 @@ let result = [
       let b = Math.floor(Math.random() * itemlocation.length);
       let temp = itemlocation[i][i];
       itemlocation[i][i] = itemlocation[b][b];
-      itemlocation[i][i] = temp;
+      itemlocation[b][b] = temp;
       opt++;
     }
-    var count = 0;
-    
-     // itemlocation.forEach(())
-    
+
+
     console.log(itemlocation);
   }
   
