@@ -38,11 +38,12 @@ let result = [
       itemlocation[i] = itemlocation[b];
       itemlocation[b] = temp;
     }
-
-    for(let i = 0; i< res.length; i++){
+    var pointer = 0;
+    for(let i = 0; i<res.length; i++){
       //
       if(res[i] !== " "){
-        scramble.push(res[itemlocation[i]]);
+        scramble.push(res[itemlocation[pointer]]);
+        pointer++;
       }
       else scramble.push(" ");
     }
