@@ -15,9 +15,7 @@ let result = [
   ];
 
   function scramble(arr) {
-    //what the solved array looks like flat
-    //console.log(solved.flat()) = ['S', 'Q', 'U', 'A', 'D', 'E', ' ', 'P', ' ', 'I', 'N', ' ', 'P', ' ', 'R', 'S', 'W', 'E', 'E', 'T', 'E', ' ', 'R', ' ', 'Y']
-    //                            ['Y', 'E', 'R', 'S', 'P', 'I', ' ', 'E', ' ', 'E', 'S', ' ', 'U', ' ', 'R', 'D', 'W', 'P', 'T', undefined, undefined, ' ', undefined, ' ', undefined]
+    
     let res = arr.flat();
     var itemlocation = new Array();
     let scramble = new Array();
@@ -140,6 +138,7 @@ let result = [
   }
   
   function drop(ev) {
+    let legal = true;
     let movesDOM = document.getElementById("moves");
     dropLetter = ev.target;
     let LMpos1 = letterMoving.getAttribute("pos1");
@@ -148,6 +147,7 @@ let result = [
     let DLpos1 = dropLetter.getAttribute("pos1");
     let DLpos2 = dropLetter.getAttribute("pos2");
   
+    if(LMpos1 == DLpos1 && LMpos2 == DLpos2){
     let temp = result[DLpos1][DLpos2];
   
     result[DLpos1][DLpos2] = result[LMpos1][LMpos2];
@@ -157,7 +157,7 @@ let result = [
       moves += 1;
       movesDOM.innerHTML = moves;
     }
-  
+    }
     setboard();
   }
   
