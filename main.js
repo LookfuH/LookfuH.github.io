@@ -17,18 +17,38 @@ let solved = [
 
 function scramble(arr) {
   let res = arr.flat();
-  for (let i = 0; i < 5000; i++) {
-    let a = Math.floor(Math.random() * res.length);
-    let b = Math.floor(Math.random() * res.length);
+  var itemlocation = new Array();
+  let scramble = new Array();
+  //counts the amount of times a letter is swapped and counts if the optimizes (will need work)
+  var opt = 0;
+  //uses the soultion array and makes a maps of locations that can be swapped around
+  for (let i = 0; i < res.length; i++){
+      if(res[i] !== " "){
+          //should generate an array of that lists where letters are
+          itemlocation.push(i); //makes it dynamic?
+      };
+  };
 
-    if (res[a] !== " " && res[b] !== " ") {
-      let temp = res[a];
-      res[a] = res[b];
-      res[b] = temp;
-    }
+  //shifts the item key
+  for (let i = 0; i < itemlocation.length; i++){
+    let b = Math.floor(Math.random() * itemlocation.length);
+    let temp = itemlocation[i];
+    itemlocation[i] = itemlocation[b];
+    itemlocation[b] = temp;
   }
-  console.log(res);
-}
+  var pointer = 0;
+  for(let i = 0; i<res.length; i++){
+    //
+    if(res[i] !== " "){
+      scramble.push(res[itemlocation[pointer]]);
+      pointer++;
+    }
+    else scramble.push(" ");
+  }
+
+  console.log(scramble);
+} 
+
 
 scramble(solved);
 
@@ -53,11 +73,7 @@ function setboard() {
   }
   let board = document.getElementById("gameboard");
   board.innerHTML = "";
-  result.forEach((item, idx) => {
-    item.forEach((letter, idx2) => {
-      board.appendChild(createPeice(letter, [], idx, idx2));
-    });
-  });
+ 
 }
 
 function checkWin() {
@@ -134,6 +150,11 @@ function drop(ev) {
   if (letterMoving != dropLetter) {
     moves += 1;
     movesDOM.innerHTML = moves;
+    result.forEach((item, idx) => {
+      item.forEach((letter, idx2) => {
+        board.appendChild(createPeice(letter, [], idx, idx2));
+      });
+    });
   }
 
   setboard();
