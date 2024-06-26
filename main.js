@@ -85,7 +85,7 @@ function checkWin() {
   let correct = document.querySelectorAll("#gameboard > .correct");
   let partial = document.querySelectorAll("#gameboard > .partial");
 
-  score.push((correct.length + partial.length / 2) / amount.length);
+ 
 
   return solved
     .map((row, i) => {
@@ -152,6 +152,7 @@ function drop(ev) {
 
   result[LMpos1][LMpos2] = temp;
   if (letterMoving != dropLetter) {
+    score.push((correct.length + partial.length / 2) / amount.length);
     moves += 1;
     movesDOM.innerHTML = moves;
   }
