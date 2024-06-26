@@ -16,39 +16,19 @@ let solved = [
 
 
 function scramble(arr) {
-    let res = arr.flat();
-    var itemlocation = new Array();
-    let scramble = new Array();
-    //counts the amount of times a letter is swapped and counts if the optimizes (will need work)
-    var opt = 0;
-    //uses the soultion array and makes a maps of locations that can be swapped around
-    for (let i = 0; i < res.length; i++){
-        if(res[i] !== " "){
-            //should generate an array of that lists where letters are
-            itemlocation.push(i); //makes it dynamic?
-        };
-    };
+  let res = arr.flat();
+  for (let i = 0; i < 5000; i++) {
+    let a = Math.floor(Math.random() * res.length);
+    let b = Math.floor(Math.random() * res.length);
 
-    //shifts the item key
-    for (let i = 0; i < itemlocation.length; i++){
-      let b = Math.floor(Math.random() * itemlocation.length);
-      let temp = itemlocation[i];
-      itemlocation[i] = itemlocation[b];
-      itemlocation[b] = temp;
+    if (res[a] !== " " && res[b] !== " ") {
+      let temp = res[a];
+      res[a] = res[b];
+      res[b] = temp;
     }
-    var pointer = 0;
-    for(let i = 0; i<res.length; i++){
-      //
-      if(res[i] !== " "){
-        scramble.push(res[itemlocation[pointer]]);
-        pointer++;
-      }
-      else scramble.push(" ");
-    }
-
-    console.log(scramble);
-  } 
-
+  }
+  console.log(res);
+}
 
 scramble(solved);
 
@@ -85,7 +65,7 @@ function checkWin() {
   let correct = document.querySelectorAll("#gameboard > .correct");
   let partial = document.querySelectorAll("#gameboard > .partial");
 
- 
+  score.push((correct.length + partial.length / 2) / amount.length);
 
   return solved
     .map((row, i) => {
@@ -152,7 +132,6 @@ function drop(ev) {
 
   result[LMpos1][LMpos2] = temp;
   if (letterMoving != dropLetter) {
-    score.push((correct.length + partial.length / 2) / amount.length);
     moves += 1;
     movesDOM.innerHTML = moves;
   }
@@ -195,9 +174,10 @@ function touchEnd(ev) {
       moves += 1;
       let movesDOM = document.getElementById("moves");
       movesDOM.innerHTML = moves;
+      setboard();
     }
 
-    setboard();
+    
   }
 }
 
