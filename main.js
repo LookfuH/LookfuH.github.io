@@ -147,7 +147,7 @@ let result = [
     let DLpos1 = dropLetter.getAttribute("pos1");
     let DLpos2 = dropLetter.getAttribute("pos2");
   
-    if(LMpos1 == DLpos1 && LMpos2 == DLpos2){
+    if(LMpos1 !== DLpos1 && LMpos2 !== DLpos2){
     let temp = result[DLpos1][DLpos2];
   
     result[DLpos1][DLpos2] = result[LMpos1][LMpos2];
